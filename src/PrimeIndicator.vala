@@ -35,7 +35,7 @@ public class Prime.Indicator : Wingpanel.Indicator {
         Object (
             code_name : "prime-indicator", /* Unique name */
             display_name : _("Prime Indicator"), /* Localised name */
-            description: _("Does nothing, but it is cool!") /* Short description */
+            description: _("A PRIME mode switcher for wingpanel.") /* Short description */
         );
     }
 
@@ -125,7 +125,7 @@ public class Prime.Indicator : Wingpanel.Indicator {
                 response = _("Intel (Power Saving)");
             break;
             case "nvidia":
-                response = _("NVIDIA (Performance Saving)");
+                response = _("NVIDIA (Performance Mode)");
             break;
             case "on-demand":
                 response = _("NVIDIA (On-Demand)");

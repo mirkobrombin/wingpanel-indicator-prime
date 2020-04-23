@@ -47,3 +47,6 @@ shared_module(
     install_dir : wingpanel_dep.get_pkgconfig_variable('indicatorsdir')
 )
 
+
+# subdir('data')
+subdir('po')

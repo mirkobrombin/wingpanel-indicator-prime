@@ -1,0 +1,64 @@
+# German translations for primeindicator package.
+# Copyright (C) 2020 THE primeindicator'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the primeindicator package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: primeindicator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-23 12:14+0200\n"
+"PO-Revision-Date: 2020-04-23 12:06+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Unique name
+#: src/PrimeIndicator.vala:37
+msgid "Prime Indicator"
+msgstr ""
+
+#. Localised name
+#: src/PrimeIndicator.vala:38
+msgid "A PRIME mode switcher for wingpanel."
+msgstr ""
+
+#: src/PrimeIndicator.vala:50
+msgid "Switch to Intel (Power saving)"
+msgstr ""
+
+#: src/PrimeIndicator.vala:53
+msgid "Switch to NVIDIA (Performance mode)"
+msgstr ""
+
+#: src/PrimeIndicator.vala:56
+msgid "Switch to NVIDIA (On-Demand)"
+msgstr ""
+
+#: src/PrimeIndicator.vala:59
+msgid "NVIDIA Settings"
+msgstr ""
+
+#: src/PrimeIndicator.vala:106
+msgid "Do you want to switch GPU now?"
+msgstr ""
+
+#: src/PrimeIndicator.vala:106
+msgid "You need to log out and then log back in to switch the GPU to"
+msgstr ""
+
+#: src/PrimeIndicator.vala:125
+msgid "Intel (Power Saving)"
+msgstr ""
+
+#: src/PrimeIndicator.vala:128
+msgid "NVIDIA (Performance Mode)"
+msgstr ""
+
+#: src/PrimeIndicator.vala:131
+msgid "NVIDIA (On-Demand)"
+msgstr ""
