@@ -3,7 +3,7 @@ A PRIME mode switcher for wingpanel.
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/mirkobrombin/wingpanel-indicator-prime/master/data/screenshot.png">
-</div
+</div>
 
 ## Build and Installation
 You'll need the following dependencies:
