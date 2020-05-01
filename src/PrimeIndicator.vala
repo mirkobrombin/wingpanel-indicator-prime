@@ -41,7 +41,7 @@ public class Prime.Indicator : Wingpanel.Indicator {
 
     construct {
         /* Create a new composited icon */
-        display_widget = new Wingpanel.Widgets.OverlayIcon ("application-x-firmware");
+        display_widget = new Wingpanel.Widgets.OverlayIcon ("system-run-symbolic");
 
         /* Create menu items */
         var current_gpu_label = new Gtk.Label (current_mode ());
@@ -76,7 +76,7 @@ public class Prime.Indicator : Wingpanel.Indicator {
             current_gpu_label.set_text ("Intel GPU");
             if (response == Gtk.ResponseType.OK) {
                 current_gpu_label.set_text ("Intel GPU");
-                Posix.system ("prime-select intel &");
+                Posix.system ("pkexec prime-select intel");
             }
         });
 
@@ -84,7 +84,7 @@ public class Prime.Indicator : Wingpanel.Indicator {
             int response = confirm_gpu_switch ("NVIDIA (Performance mode)");
             if (response == Gtk.ResponseType.OK) {
                 current_gpu_label.set_text ("NVIDIA GPU");
-                Posix.system ("prime-select nvidia &");
+                Posix.system ("pkexec prime-select nvidia");
             }
         });
 
@@ -92,7 +92,7 @@ public class Prime.Indicator : Wingpanel.Indicator {
             int response = confirm_gpu_switch ("NVIDIA (On-Demand)");
             if (response == Gtk.ResponseType.OK) {
                 current_gpu_label.set_text ("NVIDIA GPU");
-                Posix.system ("prime-select on-demand &");
+                Posix.system ("pkexec prime-select on-demand");
             }
         });
 
