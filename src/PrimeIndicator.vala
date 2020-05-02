@@ -78,7 +78,10 @@ public class Prime.Indicator : Wingpanel.Indicator {
         main_widget.attach (new Wingpanel.Widgets.Separator (), 0, 1);
         main_widget.attach (powersaving_switch_button, 0, 2);
         main_widget.attach (performance_switch_button, 0, 3);
-        main_widget.attach (ondemand_switch_button, 0, 4);
+        if (check_ondemand ())
+        {
+            main_widget.attach (ondemand_switch_button, 0, 4);
+        }
         main_widget.attach (new Wingpanel.Widgets.Separator (), 0, 5);
         main_widget.attach (settings_button, 0, 6);
 
@@ -117,7 +120,8 @@ public class Prime.Indicator : Wingpanel.Indicator {
 
     /* Show a dialog to confirm GPU switch */
     private int confirm_gpu_switch (string mode) {
-        string message = _("Do you want to switch GPU now?") + " " + _("You need to log out and then log back in to switch the GPU to") + " " + mode;
+        string message = _("Do you want to switch GPU now?") + " " 
+            + _("You need to log out and then log back in to switch the GPU to") + " " + mode;
 
         confirm_dialog = new Gtk.MessageDialog (null, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.NONE, message);
         confirm_dialog.set_deletable(false);
@@ -129,13 +133,27 @@ public class Prime.Indicator : Wingpanel.Indicator {
         return response;
     }
 
+    // check if on-demand is supported
+    private bool check_ondemand ()
+    {
+        string response;
+        Process.spawn_command_line_sync ("prime-select", out response);
+
+        if (response.contains ("on-demand"))
+            return true;
+
+        return false;
+    }
+
     /* Get current gpu */
     private string current_mode (bool raw=false) {
         string response;
         Process.spawn_command_line_sync ("prime-select query", out response);
         response = response.split("\n")[0];
+
         if (raw)
             return response.split("\n")[0];
+
         switch (response) {
             case "intel":
                 response = _("Intel (Power Saving)");
