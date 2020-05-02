@@ -40,24 +40,10 @@ public class Prime.Indicator : Wingpanel.Indicator {
     }
 
     construct {
-        string icon = "";
+        /* Create a new composited icon */
+        display_widget = new Wingpanel.Widgets.OverlayIcon ("system-run-symbolic");
 
         /* Create menu items */
-        if (current_mode (true) == "nvidia")
-        {
-            icon = "prime-indicator-nvidia-symbolic";
-        }
-        else if (current_mode (true) == "intel")
-        {
-            icon = "prime-indicator-intel-symbolic";
-        }
-        else
-        {
-            icon = "prime-indicator-hybrid-symbolic";
-        }
-
-        display_widget = new Wingpanel.Widgets.OverlayIcon (icon);
-
         var current_gpu_label = new Gtk.Label (current_mode ());
 
         var powersaving_switch_button = new Gtk.ModelButton ();
@@ -130,12 +116,10 @@ public class Prime.Indicator : Wingpanel.Indicator {
     }
 
     /* Get current gpu */
-    private string current_mode (bool raw=false) {
+    private string current_mode () {
         string response;
         Process.spawn_command_line_sync ("prime-select query", out response);
         response = response.split("\n")[0];
-        if (raw)
-            return response.split("\n")[0];
         switch (response) {
             case "intel":
                 response = _("Intel (Power Saving)");

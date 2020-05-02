@@ -48,5 +48,5 @@ shared_module(
 )
 
 
-# subdir('data')
+subdir('data')
 subdir('po')
