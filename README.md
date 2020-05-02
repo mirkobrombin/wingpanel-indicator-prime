@@ -27,6 +27,3 @@ Install:
 ```
 sudo ninja install
 ```
-
-## TODO
-* Show Nvidia/Intel icons
