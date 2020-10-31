@@ -1,7 +1,6 @@
-# PRIME indicator for Wingpanel
-A PRIME mode switcher for wingpanel.
-
 <div align="center">
+  <h1>PRIME indicator for Wingpanel</h1>
+  <p>A PRIME mode switcher for wingpanel.</p>
   <img src="https://raw.githubusercontent.com/mirkobrombin/wingpanel-indicator-prime/master/data/screenshot.png">
 </div>
 
